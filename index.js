@@ -50,17 +50,14 @@ function renderResults(items, tipo) {
     return;
   }
 
-  // Mapeamos los objetos en tarjetas interactivas de Tailwind
   const tarjetasHTML = items.slice(0, 12).map(item => {
     const titulo = item.title || item.name || "Elemento Desconocido";
     const tituloOriginal = item.original_title ? `<span class="block text-xs font-normal text-[#8ec07c] mt-0.5">${item.original_title}</span>` : "";
     
-    // Datos opcionales según el tipo de respuesta de la API
     const badgeText = item.release_date || item.gender || item.classification || "Studio Ghibli";
     const subtexto = item.director ? `Director: ${item.director}` : (item.climate ? `Clima: ${item.climate}` : "");
     const descripcion = item.description ? item.description.slice(0, 140) + "..." : "Sin descripción disponible para este registro.";
 
-    // Si es un filme, intentamos renderizar su banner superior, si no, un color plano de fondo
     const bannerHTML = item.movie_banner 
       ? `<img src="${item.movie_banner}" alt="${titulo}" class="w-full h-32 object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-300" />`
       : `<div class="w-full h-4 bg-[#504945]"></div>`;
