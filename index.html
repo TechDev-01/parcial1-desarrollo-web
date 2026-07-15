@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--TAILWINDCSS-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Studio Ghibli Explorer</title>
+</head>
+<body class="bg-[#282828] text-[#ebdbb2] min-h-screen font-sans antialiased selection:bg-[#fe8019] selection:text-[#282828]">
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <header class="text-center mb-12 space-y-3">
+      <h1 class="text-4xl md:text-5xl font-black text-[#fabd2f] tracking-tight drop-shadow-md">
+        ¡Bienvenido a StudioGhibliAPI!
+      </h1>
+      <p class="text-[#a89984] text-lg max-w-xl mx-auto">
+        Consulta toda la información respecto a los filmes, personajes y el universo del mítico estudio <strong class="text-[#fe8019] font-semibold">japonés</strong>.
+      </p>
+    </header>
+
+    <section id="drp" class="bg-[#3c3836] p-6 rounded-xl border border-[#504945] shadow-lg max-w-md mx-auto mb-12 flex flex-col sm:flex-row items-center gap-4 justify-between">
+      <label class="text-[#b8bb26] font-bold tracking-wide text-sm uppercase" for="opts">Escoge una opción:</label>
+      
+      <select name="options" id="opts" class="w-full sm:w-auto bg-[#282828] text-[#ebdbb2] border border-[#665c54] rounded-lg px-4 py-2 outline-none focus:border-[#fabd2f] focus:ring-1 focus:ring-[#fabd2f] cursor-pointer transition-all duration-200">
+        <option value="">Elige una opción</option>
+        <option value="Lugares">Lugares</option>   
+        <option value="Personajes">Personajes</option>   
+        <option value="Criaturas">Criaturas</option>   
+        <option value="Filmes">Filmes</option>   
+        <option value="Vehiculos">Vehiculos</option>   
+      </select>
+    </section>
+
+    <main id="container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300"></main>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
